@@ -25,6 +25,35 @@ $(document).ready(function () {
 
   var currentTime = dayjs().format('dddd, MMMM D');
   dateDisplay.text(currentTime);
+// Retrieves current time using Dayjs
 
-  
-  });
+  var today = dayjs();
+  var currentHour = today.format('H');
+  console.log(currentHour);
+
+  for (var i = 0; i < $('.time-block').length; i++) {
+    console.log($('.time-block')[i]);
+    var timeblockDiv = $('.time-block')[i];
+    var timeblockHour = $('.time-block')[i].getAttribute('id').split('-')[1];
+    console.log(timeblockDiv);
+    console.log(timeblockHour);
+    // Write a conditional statement in order to compare the time block's hour to the current hour
+    if (timeblockHour > currentHour) {
+      // Future
+      $(`#${timeblockDiv}`).removeClass('past present').addClass('future');
+    }
+     if (timeblockHour < currentHour) {
+      // Past
+      $(`#${timeblockDiv}`).removeClass('future present').addClass('past');
+    }
+    if (timeblockHour === currentHour) {
+        // Present
+         $(`#${timeblockDiv}`).removeClass('future past').addClass('present');
+    }
+  };
+
+  // console.log($('.saveBtn'));
+  // $('.saveBtn').on('click', function() {
+  //   console.log(this.previousSibling.previousSibling.value);
+  // })
+});
