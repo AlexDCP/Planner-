@@ -14,8 +14,7 @@
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+  
 
 
 var dateDisplay = $('#currentDay');
@@ -28,32 +27,32 @@ $(document).ready(function () {
 // Retrieves current time using Dayjs
 
   var today = dayjs();
-  var currentHour = today.format('H');
+  var currentHour = parseInt(today.format('H'));
   console.log(currentHour);
 
   for (var i = 0; i < $('.time-block').length; i++) {
     console.log($('.time-block')[i]);
     var timeblockDiv = $('.time-block')[i];
-    var timeblockHour = $('.time-block')[i].getAttribute('id').split('-')[1];
+    var timeblockHour = parseInt($('.time-block')[i].getAttribute('id').split('-')[1]);
     console.log(timeblockDiv);
     console.log(timeblockHour);
-    // Write a conditional statement in order to compare the time block's hour to the current hour
+    //Write a conditional statement in order to compare the time block's hour to the current hour
     if (timeblockHour > currentHour) {
       // Future
-      $(`#${timeblockDiv}`).removeClass('past present').addClass('future');
+      $(timeblockDiv).removeClass('past').removeClass('present').addClass('future');
     }
      if (timeblockHour < currentHour) {
       // Past
-      $(`#${timeblockDiv}`).removeClass('future present').addClass('past');
+      $(timeblockDiv).removeClass('future').removeClass('present').addClass('past');
     }
     if (timeblockHour === currentHour) {
         // Present
-         $(`#${timeblockDiv}`).removeClass('future past').addClass('present');
+         $(timeblockDiv).removeClass('past').removeClass('future').addClass('present');
     }
   };
 
-  // console.log($('.saveBtn'));
-  // $('.saveBtn').on('click', function() {
-  //   console.log(this.previousSibling.previousSibling.value);
-  // })
+  console.log($('.saveBtn'));
+  $('.saveBtn').on('click', function() {
+    console.log(this.previousSibling.previousSibling.value);
+  })
 });
