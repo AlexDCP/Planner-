@@ -49,14 +49,18 @@ $(document).ready(function () {
   $('button').on('click', function() {
     console.log(this.previousSibling.previousSibling.value);
 
-    var dayPlan = (this.previousSibling.previousSibling.value);
-    localStorage.setItem('txtArea', dayPlan);
 
-
+    for (var i = 0; i < $('.time-block').length; i++) {
+      var timeblockHour = parseInt($('.time-block')[i].getAttribute('id').split('-')[1]);
+      var timeblockValue = $('.time-block').eq(i).children('textarea').val();
+      console.log(timeblockValue);
+      localStorage.setItem('hour' + timeblockHour, timeblockValue);
+    }
   })
 
   $('#body').on("pageshow", function(){
-    var data = localStorage.getItem(dayPlan).val();
-    document.getElementsById('textarea').innerText = dayPlan
+    for (var i = 0; i < $('.time-block').length; i++) {
+      
+    }
   });
 });
