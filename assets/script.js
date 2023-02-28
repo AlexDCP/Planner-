@@ -31,7 +31,8 @@ $(document).ready(function () {
          $(timeblockDiv).removeClass('past').removeClass('future').addClass('present');
     }
   };
-
+  // this is the onclick function needed to save to each individual line into the local data
+  // rather than all together in previous iterations
   console.log($('.saveBtn'));
   $('button').on('click', function() {
     var text = this.previousSibling.previousSibling.value;
@@ -40,7 +41,9 @@ $(document).ready(function () {
 
   })
 
-  
+  // this code populates the local data by using the parse from the save button storing data
+  // after the pars is stored in the var timeblockHour text can use it to call the local data
+  // and the last line loads the data into the index point from the parse
     for (var i = 0; i < $('.time-block').length; i++) {
       var timeblockHour = parseInt($('.time-block')[i].getAttribute('id').split('-')[1]);
       var text = localStorage.getItem(timeblockHour);
