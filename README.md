@@ -12,8 +12,9 @@ To get the page to work you just need to click the save button after typing out 
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-  
-[screenshot](assets/images/screenshot.JPG)
+[Planner](https://user-images.githubusercontent.com/121056037/225805519-5489d908-6b6d-4175-8a7a-ab0c3139ab42.JPG)
+
+
    
 
 ## Credits
