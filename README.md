@@ -10,7 +10,7 @@ In doing this I have learned that parseInt() can be used to help targeting class
 
 To get the page to work you just need to click the save button after typing out what it is that you have planned, and it will load on refresh or reload as well! To get the page cleared, access your dev tools and clear the local storage.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+To access the page visit here: https://alexdcp.github.io/Planner-/
 
 ![Planner](https://user-images.githubusercontent.com/121056037/225805519-5489d908-6b6d-4175-8a7a-ab0c3139ab42.JPG)
 
